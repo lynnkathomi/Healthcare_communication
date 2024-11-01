@@ -1,0 +1,389 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "communicationId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "acknowledgedBy",
+						"type": "address"
+					}
+				],
+				"name": "CommunicationAcknowledged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "communicationId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isUrgent",
+						"type": "bool"
+					}
+				],
+				"name": "NewCommunication",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "provider",
+						"type": "address"
+					}
+				],
+				"name": "ProviderAuthorized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "provider",
+						"type": "address"
+					}
+				],
+				"name": "ProviderRevoked",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "communicationId",
+						"type": "uint256"
+					}
+				],
+				"name": "acknowledgeCommunication",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "provider",
+						"type": "address"
+					}
+				],
+				"name": "authorizeProvider",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorizedProviders",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "communications",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "encryptedMessage",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUrgent",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAcknowledged",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "messageType",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					}
+				],
+				"name": "establishRelationship",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "communicationId",
+						"type": "uint256"
+					}
+				],
+				"name": "getCommunication",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "encryptedMessage",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUrgent",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAcknowledged",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "messageType",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUnacknowledgedUrgentCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "communicationId",
+						"type": "uint256"
+					}
+				],
+				"name": "isMessageUrgent",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "patientProviderRelationship",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "provider",
+						"type": "address"
+					}
+				],
+				"name": "revokeProvider",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "encryptedMessage",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUrgent",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "messageType",
+						"type": "string"
+					}
+				],
+				"name": "sendCommunication",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"HealthcareCommunication.sol": "HealthcareCommunication"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"HealthcareCommunication.sol": {
+			"keccak256": "0x4caea60a5e5942cd4e5f05da6b513b9b46a693149dadcfd8b830e60df180c563",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5b42b935bdd7c1550a7015a3e1906951587fdd9baa0e52b5567b7dc8f9e9e1e2",
+				"dweb:/ipfs/QmXBHXwZsw7fHAa8jXj4ohkxbSHuZrYLfqwqB7a6j1aM2M"
+			]
+		}
+	},
+	"version": 1
+}
